@@ -1,11 +1,13 @@
 # DSML 4220 Project
 
-This proposal is an important part of your project since it outlines exactly what you plan to do (what data to use, what model(s) to use and/or train, etc.). Although the project must involve Deep Learning, there is a broad range of possible project types you could choose from. The project could be about:
+# Overview
+The goal of this project is to learn how to train a text summarization model on a dataset for news articles and create a web app that allows the user to enter a url to get a summary of the news article.
 
-    training a Deep Learning model from scratch on a dataset of your choice (could be a Kaggle competition)
-    fine-tuning an existing Deep Learning model on a dataset of your choice (could also be a Kaggle competition) 
-    researching different models or configurations or models to benchmark/compare performance on a given task, or to illustrate a certain concept/phenomena (e.g demonstrating when/how Grokking happens, or comparing different word embedding   n     approaches/models)
-    using an existing pre-trained Deep Learning model (or calling an API to external model) to accomplish a given task, or provide some functionality (ideally within an app or website)
+# Data
+The dataset I chose is the CNN / DailyMail dataset. It is composed of 300K news articles and their corresponding summary. The three columns it has are ID, article and highlights.
 
+# Models/Architectures
+I chose to use a T-5 base model with its corresponding T5Tokenizer. I used a GPU to train the model since its average time without it was over eight hours. . . . .. . . . . .
 
-Goal: Create a web app that allows a user to input a url for a news article and get a summary of the article. Wil be training a T5-small model and using a pre-built T5 Tokenizer to train with the CNN/Daily Mail daataset.
+# Tools and Frameworks
+I used the HuggingFace Transformers package which included the the model, its tokenizer, training arguements and the trainer and dataset package which inlcuded the CNN/DailyMail dataset. Pytorch was used by the HuggingFace APIs.
