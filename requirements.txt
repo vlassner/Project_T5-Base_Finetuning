@@ -1,0 +1,8 @@
+#pip install -r requirements.txt
+# pip install --upgrade transformers sentencepiece
+transformers
+newspaper3k
+streamlit
+torch --index-url https://download.pytorch.org/whl/cpu
+lxml_html_clean
+--upgrade transformers sentencepiece
