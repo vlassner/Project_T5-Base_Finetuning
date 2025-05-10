@@ -12,7 +12,7 @@ The goal of this project is to finetune a text summarization model efficiently u
 - I trained it for a total of four rounds.
 
 ## Models/Architectures
-- T5-Base model 
+- T5-Base model with T5Tokenizer
 - Training performed for 3 epochs with a batch size of 4, using Hugging Face's `Trainer`.
 
 ## Tools and Frameworks
@@ -22,7 +22,7 @@ The goal of this project is to finetune a text summarization model efficiently u
 
 ## How to run
 - Create a virtual environment
-- Download requirements.txt
+- Download requirements.txt (may need to update certain packages)
 - Run command: streamlit run app.py
 
 ## Results
@@ -33,7 +33,9 @@ The goal of this project is to finetune a text summarization model efficiently u
 
 ## Next Steps
 - Train model on entire dataset.
-- 
+- Adjust hyperparameters
+- Add more languages other than English
+- Create a cloud service using AWS
 
 ## Model Artifacts
 - I uploaded my model to HuggingFace after each session and continuously retrained it by pulling it back down from HuggingFace.
@@ -47,7 +49,7 @@ tokenizer = T5Tokenizer.from_pretrained(model_T5)
 model = T5ForConditionalGeneration.from_pretrained("/content/t5_cnn_model_base_v4")
 tokenizer = T5Tokenizer.from_pretrained("/content/t5_cnn_model_base_v4")
 
-Train the model . . .
+### Train the model . . .
 
 ### Save Locally
 model.save_pretrained("/content/t5_cnn_model_base_v4")
