@@ -33,7 +33,7 @@ The goal of this project is to finetune a text summarization model efficiently u
 
 ## Next Steps
 - Add more languages other than English.
-- Use it to create study aids - use different dataset to add essays and such.
+- Use it to create study aids - use different dataset to add essays and such like Notebooklm.
 
 ## Model Artifacts
 - I uploaded my model to HuggingFace after each session and continuously retrained it by pulling it back down from HuggingFace.
