@@ -32,29 +32,32 @@ The goal of this project is to finetune a text summarization model efficiently u
 - Runtime without GPU and only 3000 samples ~9 hours with 0.09 samples/sec.
 
 ## Next Steps
-- Train model on entire dataset.
-- Adjust hyperparameters
-- Add more languages other than English
-- Create a cloud service using AWS
+- Add more languages other than English.
+- Use it to create study aids - use different dataset to add essays and such.
 
 ## Model Artifacts
 - I uploaded my model to HuggingFace after each session and continuously retrained it by pulling it back down from HuggingFace.
 - I did use checkpoints at every 1000 steps as a fail safe in case colab timed out which occured often.
 
 ### Steps to retrain and save model
-model_T5 = "vlassner01/t5_cnn_model_base_v4"
-tokenizer = T5Tokenizer.from_pretrained(model_T5)
- model = T5ForConditionalGeneration.from_pretrained(model_T5)
+- model_T5 = "vlassner01/t5_cnn_model_base_v4"
+- tokenizer = T5Tokenizer.from_pretrained(model_T5)
+- model = T5ForConditionalGeneration.from_pretrained(model_T5)
 ### Load model and tokenizer
-model = T5ForConditionalGeneration.from_pretrained("/content/t5_cnn_model_base_v4")
-tokenizer = T5Tokenizer.from_pretrained("/content/t5_cnn_model_base_v4")
+- model = T5ForConditionalGeneration.from_pretrained("/content/t5_cnn_model_base_v4")
+- tokenizer = T5Tokenizer.from_pretrained("/content/t5_cnn_model_base_v4")
 
 ### Train the model . . .
 
 ### Save Locally
-model.save_pretrained("/content/t5_cnn_model_base_v4")
-tokenizer.save_pretrained("/content/t5_cnn_model_base_v4")
+- model.save_pretrained("/content/t5_cnn_model_base_v4")
+- tokenizer.save_pretrained("/content/t5_cnn_model_base_v4")
 
 ### Save to HuggingFace
-model.push_to_hub("vlassner01/t5_cnn_model_base_v4",  commit_message="Version_5")
-tokenizer.push_to_hub("vlassner01/t5_cnn_model_base_v4")
+- model.push_to_hub("vlassner01/t5_cnn_model_base_v4",  commit_message="Version_5")
+- tokenizer.push_to_hub("vlassner01/t5_cnn_model_base_v4")
+
+## Challenges
+- Added padding so all sequences were the same length.
+- Break the large dataset into chunks for easier computate rather than loading the whole dataset into memory.
+- Saving the spiece.model file to HugginFace.
