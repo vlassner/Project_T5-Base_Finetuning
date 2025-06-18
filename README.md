@@ -1,4 +1,4 @@
-# DSML 4220 Project
+# T5-Base Finetuning
 ## By Victoria Lassner
 
 ## Overview
